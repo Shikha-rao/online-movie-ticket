@@ -1,0 +1,35 @@
+<div class="sign section--bg">
+    <div class="container" style="margin-top: 60px;">
+        <div class="row">
+            <div class="col-12">
+                <div class="sign__content">
+                    <!-- authorization form -->
+                    <form #f="ngForm" method="get" (ngSubmit)="signIn()" class="sign__form">
+
+                        <div class="section__wrap">
+                            <!-- section title -->
+                            <h2 class="section__title">Login</h2>
+                            <!-- end section title -->
+                        </div>
+
+                        <div class="sign__group">
+                            <input type="email" name="email" [(ngModel)]="email" class="sign__input" placeholder="Email" required>
+                        </div>
+
+                        <div class="sign__group">
+                            <input type="password" name="password" [(ngModel)]="password" class="sign__input" placeholder="Password" required>
+                        </div>
+                        <div *ngIf="invalidLogin"><p class="text-danger bg-white">Invalid username and/or password.</p></div>
+
+                        <button class="sign__btn" type="submit">Sign in</button>
+
+                        <span class="sign__text">Don't have an account? <a [routerLink]="['/signup']" routerLinkActive="router-link-active" >Sign up!</a></span>
+
+                    </form>
+                    <!-- end authorization form -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>
